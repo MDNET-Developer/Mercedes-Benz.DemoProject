@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMasterPage.master.cs" Inherits="MercedesBenzProject.AdminPanelMerc.AdminMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Mercedes-Benz Admin Panel</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="icon" href="../Image/favicon.ico" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <style>
+        li{
+         width:250px;
+            list-style:none;
+            padding:5px;
+            border:1px solid snow;
+            font-size:22px;
+            border-radius:20px;
+            background-color:#2e86de;
+            color:snow;
+            font-family:'Times New Roman';
+            transition:0.5s ease;
+               text-align:center;
+        }
+        li:hover{
+            background-color:#18dcff;
+            cursor:pointer;
+            width:250px;
+            margin-left:30px;
+              border-radius:22px;
+            /*transform:scale(1.1)*/
+        }
+        .li-a{
+            color:snow;
+            text-align:center;
+        }
+        .li-a:hover{
+            color:snow;
+            text-decoration:none;
+        }
+        #x{
+            background-color:goldenrod;
+   
+        }
+        #x:hover{
+            background-color:red;
+            box-shadow:2px,2px,8px  red;
+        }
+    </style>
+    <form id="form1" runat="server">
+        <br />
+        <div>
+            <div class="col-lg-3">
+
+                <ul>
+                    <li><a class="li-a" href="AdminMotherPage.aspx">Ana səhifə</a></li>
+                    <li><a class="li-a" href="Menu_Mercedes.aspx">Menyular</a></li>
+                    <li><a class="li-a" href="CardMercedes.aspx">Avtomobil Kartları</a></li>
+                    <li><a class="li-a" href="SliderMerc.aspx">Avtomobil Slaydları</a></li>
+                    <li><a class="li-a" href="InformationMerc.aspx">Avtomobil Informasiyaları</a></li>
+                    <li id="x"><a class="li-a" href="AdminPanelLogin.aspx">Çıxış</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-9">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

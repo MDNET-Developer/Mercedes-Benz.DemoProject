@@ -1,0 +1,181 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MercedesMasterPage.master.cs" Inherits="MercedesBenzProject.MercedesBenz.MercedesMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Mercedes-Benz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+  <link rel="icon" href="../Image/favicon.ico" />
+       
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <style>
+               
+                #MenuUL{
+                    margin-top:1.5cm;
+                }
+                #MercMenu{
+                    background-color:black;
+                    height:3cm;
+                    width:100%;
+                    padding:50px,10px;
+                    position:fixed;
+                    z-index:99;
+                   
+                }
+                .MenuHissecik {
+                    float: left;
+                    list-style: none;
+                    margin-right: 20px;
+                }
+
+
+                    .MenuHissecik a {
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: snow;
+                        transition:0.3s linear;
+                    }
+                    .MenuHissecik :hover{
+                        color:#45aaf2;
+                    }
+                    #footer{
+                        background-color:black;
+                        margin-bottom:15px;
+                    }
+                    #Logo{
+                        cursor:pointer;
+                        font-size:25px;
+                        color:white;
+                        font-family:'Times New Roman';
+                        margin:15px;
+                        transform: scale(1);
+                        transition: 1s linear;
+                    }
+                    #Logo:hover{
+                        text-decoration:none;
+                        color:#1B9CFC;
+                        
+                    }
+                    /*#MenuBTN{
+                        display:none;
+                    }
+                      #Menuac{
+                    display:none;
+                }
+                @media (max-width:700px){
+                    #MenuBTN{
+                        display:block;
+                    }
+                     #Menuac{
+                    display:block;
+                }
+                     .MenuHissecik {
+                        float:none;
+                       margin-bottom:15px;
+                        text-align:center;
+                     
+                     }
+                   #MercMenu{
+                        display:none;
+                    }*/
+                
+            </style>
+
+            <script>
+var openFile = function(file) {
+    var input = file.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+      var dataURL = reader.result;
+      var output = document.getElementById('ContentPlaceHolder1_imgnews');
+      output.src = dataURL;
+    };
+    reader.readAsDataURL(input.files[0]);
+  };
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById('#MercMenu').style.padding = "30px 10px";
+    document.getElementById('#logo').style.fontSize = "25px";
+  } else {
+    document.getElementById('#MercMenu').style.padding = "50px 10px";
+    document.getElementById('#logo').style.fontSize = "35px";
+  }
+}
+            </script>
+        <%--<script>
+$(document).ready(function(){
+  $("#MenuBTN").click(function(){
+    $(".col-lg-9").toggle(500);
+  });
+});
+</script>--%>
+               
+        
+                   <div id="MercMenu" class="col-lg-12;">
+                                <br />
+                       <div class="col-md-3">
+                           <img style="width:2cm; height:2cm" src="../Image/MercedesBenzKing.png" /><a href="MotherPage.aspx" id="Logo" >Mercedes-Benz</a>
+                       </div>
+                       <div class="col-md-9">
+                           <asp:Literal ID="LtMercedes" runat="server"></asp:Literal>
+                      
+                       </div>
+                       
+                   </div>
+                     <%-- <div class="col-lg-12" id="Menuac">
+                          <img style="width:2cm; height:2cm;float:left" src="../Image/MercedesBenzKing.png" /><span style="font-size:25px;color:white;font-family:'Times New Roman';margin:15px">Mercedes-Benz</span>
+                              </div>
+                     <img id="MenuBTN" style="float:right;margin-top:0;" src="../Image/MercedesMobileMenu.png" />--%>
+                
+        
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <div id="footer" class="col-lg-12">
+                <div class="col-lg-12" style="height:0.1cm;width:100%; background-color:silver"></div>
+                <div class="col-md-4">
+                    <img style="width: 5cm; height: 4cm" src="../Image/AMG.png" />
+                </div>
+                <div class="col-md-4">
+                    <img style="width: 5cm; height: 4cm" src="../Image/DaimlerLOGO.png" />
+
+                </div>
+                <div class="col-md-4">
+                    <img style="width: 5cm; height: 4cm" src="../Image/SmartLogo.png" />
+                </div>
+                <div style="color:snow; font-size:17px;">
+                    <div class="col-md-6">
+                        Murad Aliyev - Full Stack Developer.<br />
+                    ASP.NET Technology/SQL Sever 2014
+                        <br />
+                    Full Stack Developer
+                    </div>
+                    <div class="col-md-6">
+                        "Mersedes-Benz"in loqotipi 1909-cu ildə işlənib hazırlanmışdır. Mənası isə "quruda, suda, havada" deməkdir. Çünki şirkət avtmobildən əlavə gəmi və aviasiya mühərrikləri də istehsal edirdi.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
